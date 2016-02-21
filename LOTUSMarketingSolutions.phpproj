@@ -21,7 +21,11 @@
     <Compile Include="fonts\pe-icon-7-stroke\index.php" />
     <Compile Include="fonts\revicons\index.php" />
     <Compile Include="index.html" />
-    <Compile Include="partials\slidetemplate.html" />
+    <Compile Include="partials\slider.html" />
+    <Compile Include="revolution\fonts\pe-icon-7-stroke\css\index.php" />
+    <Compile Include="revolution\fonts\pe-icon-7-stroke\fonts\index.php" />
+    <Compile Include="revolution\fonts\pe-icon-7-stroke\index.php" />
+    <Compile Include="revolution\fonts\revicons\index.php" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="css\" />
@@ -45,6 +49,15 @@
     <Folder Include="js\owl_carousel\" />
     <Folder Include="js\slide\" />
     <Folder Include="img\" />
+    <Folder Include="revolution\" />
+    <Folder Include="revolution\css\" />
+    <Folder Include="revolution\fonts\" />
+    <Folder Include="revolution\fonts\pe-icon-7-stroke\" />
+    <Folder Include="revolution\fonts\pe-icon-7-stroke\css\" />
+    <Folder Include="revolution\fonts\pe-icon-7-stroke\fonts\" />
+    <Folder Include="revolution\fonts\revicons\" />
+    <Folder Include="revolution\js\" />
+    <Folder Include="revolution\js\extensions\" />
     <Folder Include="views\" />
     <Folder Include="scss\" />
     <Folder Include="scss\bootstrap\" />
@@ -205,7 +218,6 @@
     <Content Include="img\uniform.png" />
     <Content Include="img\Wall-Sign.jpg" />
     <Content Include="js\angular-carousel.min.js" />
-    <Content Include="js\angular-revolution.js" />
     <Content Include="js\bootstrap.min.js" />
     <Content Include="js\cart.js" />
     <Content Include="js\controller.js" />
@@ -244,6 +256,30 @@
     <Content Include="js\slide\boxesFx.js" />
     <Content Include="js\slide\classie.js" />
     <Content Include="js\slide\modernizr.custom.js" />
+    <Content Include="revolution\css\captions-original.css" />
+    <Content Include="revolution\css\settings.css" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\css\helper.css" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\css\pe-icon-7-stroke.css" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.eot" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.svg" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.ttf" />
+    <Content Include="revolution\fonts\pe-icon-7-stroke\fonts\Pe-icon-7-stroke.woff" />
+    <Content Include="revolution\fonts\revicons\revicons.eot" />
+    <Content Include="revolution\fonts\revicons\revicons.svg" />
+    <Content Include="revolution\fonts\revicons\revicons.ttf" />
+    <Content Include="revolution\fonts\revicons\revicons.woff" />
+    <Content Include="revolution\js\extensions\revolution.extension.actions.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.carousel.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.kenburn.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.layeranimation.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.migration.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.navigation.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.parallax.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.slideanims.min.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.video.min copy.js" />
+    <Content Include="revolution\js\extensions\revolution.extension.video.min.js" />
+    <Content Include="revolution\js\jquery.themepunch.revolution.min.js" />
+    <Content Include="revolution\js\jquery.themepunch.tools.min.js" />
     <Content Include="views\404.html" />
     <Content Include="views\about.html" />
     <Content Include="views\contact.html" />
