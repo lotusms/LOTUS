@@ -1,0 +1,158 @@
+﻿/**************
+
+    MIXINS
+
+**************/
+
+
+/********* UTILITY MIXINS  **********/
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+
+@mixin background-size($argumets) {
+  -webkit-background-size: $argumets;
+    -moz-background-size: $argumets;
+    -o-background-size: $argumets;
+    background-size: $argumets;
+}
+
+@mixin transform-translate($x:0px, $y:0px) {
+    -webkit-transform: translate($x, $y);
+    -moz-transform: translate($x, $y);
+    -ms-transform: translate($x, $y);
+    transform: translate($x, $y); 
+}
+
+@mixin transition-cubic() {
+    -webkit-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -moz-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    -ms-transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+  @if $inset {
+    -webkit-box-shadow:inset $top $left $blur $color;
+    -moz-box-shadow:inset $top $left $blur $color;
+    box-shadow:inset $top $left $blur $color;
+  } @else {
+    -webkit-box-shadow: $top $left $blur $color;
+    -moz-box-shadow: $top $left $blur $color;
+    box-shadow: $top $left $blur $color;
+  }
+}
+
+@mixin transform-btn-bg-hover() {
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg);
+}
+
+@mixin transition($val: all 0.3s) {
+    -webkit-transition: $val;
+    -moz-transition:$val;
+    -o-transition:$val;
+    -ms-transition:$val;
+    transition:$val;
+}
+
+
+
+/********* FONTS  **********/
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: calculateRem($size);
+}
+
+@mixin base-font(){
+    font: 400 #{$base-font-size}/22px Open sans, sans-serif; 
+}
+
+@mixin h1-font(){
+    font: 400 #{$h1-size}/30px Raleway; 
+}
+
+@mixin h2-font(){
+    font: 400 #{$h2-size}/30px Raleway; 
+}
+
+@mixin h3-font(){
+    font: 400 #{$h3-size}/30px Raleway; 
+}
+
+@mixin h4-font(){
+    font: 700 #{$h4-size}/30px Raleway; 
+}
+
+@mixin h5-font(){
+    font: 400 #{$h5-size}/30px Open sans, sans-serif; 
+}
+
+@mixin h6-font(){
+    font: 400 #{$h6-size}/30px Open sans, sans-serif; 
+}
+
+
+
+/********* BUTONS  **********/
+
+@mixin primary-button($color: $primary-color, $text_color: $white-base) {
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+    z-index: 999;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    padding: .5em 2em .55em;
+    text-shadow: none;
+    @include border-radius(0px);
+    @include box-shadow(0, 1px, 2px, rgba(0, 0, 0, 0.2));
+    color: $text_color !important;
+    font-weight: 600;
+    border: solid 1px darken($color, 2%);
+    background: $color;  
+
+  &:hover, &:focus  {
+    text-decoration: none;
+    background: $primary-hover;
+    color: darken($text_color, 80%) !important; 
+    border: solid 1px lighten($color, 12%);
+    &:after{
+	    height: 500%;
+        opacity:1;
+    }
+  }
+
+  &:active {
+    position: relative;
+    top: 1px;
+    color: saturate($color, 15%);
+  }
+  &:after{
+    width: 100%;
+    height: 48%;
+    top: 50%;
+    left: 50%;
+    background:lighten($color, 25%); 
+    opacity: 0;
+    @include transform-btn-bg-hover();
+  }
+}
+
+@mixin large-button(){
+    padding: 0.75rem 1.25rem;
+}
