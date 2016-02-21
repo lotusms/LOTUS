@@ -1,5 +1,5 @@
 
-var app = angular.module('angula', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial']);
+var app = angular.module('angula', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial', 'rev.slider']);
 
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
@@ -29,10 +29,73 @@ app.controller('PageCtrl', function ( $scope, $location, $http ) {
 /***Only for Preview ***/
 app.controller('ExampleController', ['$scope', function($scope) {
     $scope.templates = { name: 'footer', url: 'partials/footer.html' }
-    $scope.templates = { name: 'slider', url: 'partials/slider.html' }
     
   $scope.template = $scope.templates;
   
+}]);
+
+
+// module controller
+app.controller("SliderCtrl", ["$scope", function ($scope) {
+    // slider settings object set to scope.
+    $scope.slider = {
+        sliderType: "standard",
+        sliderLayout: "auto",
+        responsiveLevels: [1920, 1024, 778, 480],
+        gridwidth: [1930, 1240, 778, 480],
+        gridheight: [768, 768, 960, 720],
+        autoHeight: "off",
+        minHeight: "",
+        fullScreenOffsetContainer: "",
+        fullScreenOffset: "",
+        delay: 9000,
+        disableProgressBar: "on",
+        startDelay: "",
+        stopAfterLoops: "",
+        stopAtSlide: "",
+        viewPort: {},
+        lazyType: "none",
+        dottedOverlay: "none",
+        shadow: 0,
+        spinner: "off",
+        hideAllCaptionAtLilmit: 0,
+        hideCaptionAtLimit: 0,
+        hideSliderAtLimit: 0,
+        debugMode: false,
+        extensions: "",
+        extensions_suffix: "",
+        fallbacks: { simplifyAll: "off", disableFocusListener: false },
+        parallax: { type: "scroll", origo: "enterpoint", speed: 400, levels: [5, 10, 15, 20, 25, 30, 35, 40, 45, 50] },
+        carousel: {},
+        navigation: {
+            keyboardNavigation: "off", keyboard_direction: "horizontal", mouseScrollNavigation: "off", onHoverStop: "on",
+            touch: {
+                touchenabled: "on",
+                swipe_treshold: 75,
+                swipe_min_touches: 1,
+                drag_block_vertical: false,
+                swipe_direction: "horizontal"
+            },
+            tabs: {
+                style: "zeus",
+                enable: true,
+                width: 150,
+                height: 30,
+                min_width: 100,
+                wrapper_padding: 0,
+                wrapper_color: "transparent",
+                wrapper_opacity: "0",
+                //tmp: "<span class=""> {{title}} </span>", visibleAmount: 3, hide_onmobile: true, hide_under: 480, hide_onleave: false, hide_delay: 200, direction: "horizontal", span: true, position: "inner", space: 1, h_align: "left", v_align: "top", h_offset: 30, v_offset: 30 }
+            }
+        }
+
+        //jsFileLocation: "",
+        //visibilityLevels: [1240, 1024, 778, 480],
+        //hideThumbsOnMobile: "off"
+        //};
+
+
+    }
 }]);
 
 
