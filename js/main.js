@@ -9,8 +9,20 @@ app.config(['$routeProvider', function ($routeProvider) {
     // About
     .when("/about", { templateUrl: "views/about.html", controller: "PageCtrl" })
     .when("/faq", { templateUrl: "views/faq.html", controller: "PageCtrl" })
+    .when("/web-design", { templateUrl: "views/web-design.html", controller: "PageCtrl" })
+    .when("/economy-web-design", { templateUrl: "views/economy-web-design.html", controller: "PageCtrl" })
+    .when("/business-web-design", { templateUrl: "views/business-web-design.html", controller: "PageCtrl" })
+    .when("/marketing-web-design", { templateUrl: "views/marketing-web-design.html", controller: "PageCtrl" })
+    .when("/e-commerce-web-design", { templateUrl: "views/e-commerce-web-design.html", controller: "PageCtrl" })
+    .when("/branding-design", { templateUrl: "views/branding-design.html", controller: "PageCtrl" })
+    .when("/graphic-design", { templateUrl: "views/graphic-design.html", controller: "PageCtrl" })
+    .when("/on-page-seo", { templateUrl: "views/on-page-seo.html", controller: "PageCtrl" })
+    .when("/social-networks", { templateUrl: "views/social-networks.html", controller: "PageCtrl" })
+    .when("/web-maintenance", { templateUrl: "views/web-maintenance.html", controller: "PageCtrl" })
+    .when("/speed-service", { templateUrl: "views/speed-service.html", controller: "PageCtrl" })
+    .when("/site-optimization", { templateUrl: "views/site-optimization.html", controller: "PageCtrl" })
+    .when("/payment-plans", { templateUrl: "views/payment-plans.html", controller: "PageCtrl" })
     .when("/quote-request", { templateUrl: "views/quote-request.html", controller: "PageCtrl" })
-    .when("/services", { templateUrl: "views/services.html", controller: "PageCtrl" })
     .when("/contact", { templateUrl: "views/contact.html", controller: "PageCtrl" })
     .when("/privacy-policy", { templateUrl: "views/privacy-policy.html", controller: "PageCtrl" })
     .when("/terms-of-use", { templateUrl: "views/terms-of-use.html", controller: "PageCtrl" })
@@ -98,9 +110,7 @@ app.controller("SliderCtrl", ["$scope", function ($scope) {
     }
 }]);
 
-
 /*Controller Portfolio and filter Images*/
-
 app.controller("dataImagesWork", function ($scope) {
     $scope.images_work = [
           {
@@ -166,8 +176,6 @@ app.controller("dataImagesWork", function ($scope) {
 
 });
 
-
-
 //tabs management
 app.controller('TabsDemoCtrl', function ($scope, $window) {
     $scope.tabs = [
@@ -229,12 +237,6 @@ app.directive('owlcarousel', function () {
             paginationSpeed: 400,
             singleItem: true,
             autoPlay: true
-            // "singleItem:true" is a shortcut for:
-            // items : 1, 
-            // itemsDesktop : false,
-            // itemsDesktopSmall : false,
-            // itemsTablet: false,
-            // itemsMobile : false
         });
 
     }
