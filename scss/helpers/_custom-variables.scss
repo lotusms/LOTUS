@@ -1,4 +1,4 @@
-﻿
+
 /***** BASE COLORS *****/
 
 $black-base:        #000;                           //#000
@@ -22,8 +22,8 @@ $almost-white:      lighten($black-base, 93.25%);    //#eee
 $gray-bg:           #D7D7D7;
 $footer-bg:         #034E69;
 
-$primary-color:     $dark-blue;                           //#00759B
-$secondary-color:   lighten($black-base, 50%);       //#000
+$primary-color:     $dark-blue;                      //#00759B
+$secondary-color:   $gray-lightest;                  //#000
 $ternary-color:     lighten($black-base, 50%);       //#000
 
 

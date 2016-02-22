@@ -34,22 +34,12 @@ body {
 /***** Typography *******/
 
 h1, .h1 {
-	text-transform: uppercase;
-	margin-bottom: 20px;
     @include h1-font();
-    @include font-size($h1-size);  
-    border-bottom: 1px solid $gray-lightest;
-	padding-bottom: 6px;
-	margin-top: 0;
+    @include font-size($h1-size); 
 }
 h2, .h2 {
     @include h2-font();
-    @include font-size($h2-size);  
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    border-bottom: 1px solid $gray-lightest;
-	padding-bottom: 6px;
-	margin-top: 0;
+    @include font-size($h2-size); 
 }
 h2 span{
     padding: 3px 0px;
@@ -126,18 +116,23 @@ img {
             @include large-button(); 
         }
     }
-    &:after {
-	    content: '';
-	    position: absolute;
-	    z-index: -1;
-	    @include transition(1s);
+    &.btn-secondary{
+        @include secondary-button();
+        &.btn-lg{
+            @include large-button(); 
+        }
     }
+    
 }
-
 
 /****************  TITLES AND SUBTITLES    ************/
 
 .section-title{
+    text-align: center;
+    font-size: 50px !important;
+    font-weight: 700;
+    color: $primary-color;
+    font-family: 'roboto';
     span{
 	    color:$blue;
     }
@@ -236,7 +231,7 @@ img {
     }
 
     .navbar-brand {
-	    padding: 0px;
+	    padding: 0px 15px;
         span{
             font-size:30px;
             font-family: 'Roboto Condensed', sans-serif;
@@ -434,72 +429,91 @@ img {
     }
 }
 
-/****************  SLIDER    ************/
-/****  MAIN SLIDER  ****/
-
-/*.container-slide {
-	position: relative;
-	height: 600px;
-    margin-top: 0px;
-    .codrops-header {
-	    z-index: 1000;
-	    position: absolute;
-	    top: 45%;
-	    left: 50%;
-        width:100%;
-	    text-align: center;
-	    -webkit-transform: translate(-50%,-50%);
-	    transform: translate(-50%,-50%);
-        .heading{
-            background: rgba(255, 255, 255, 0.15);
-            border: 4px solid rgba(0, 117, 155, 0.54);
-            display: inline-block;
-            background-image:url(../images/texture/grid-pattern.png);
-            padding:25px;
-            h1 {
-	            margin: 0;
-	            font-weight: 900;
-	            font-size: 80px;
-	            line-height: 1;
-                color:lighten($blue, 10%);
-                text-shadow: 1px 1px 0px $black-base;
-                span {
-	                display: block;
-	                padding: 20px 0;
-                    font-size: 18px;
-                    line-height: 22px;
-	                opacity: 1;
-	                font-weight: 400;
-                }
-            }
-        
-            p{
-                &.promo{
-                    font-size:40px;
-                    color:$white-base;
-                    text-shadow: 1px 1px 0px $black-base;
-                    margin-top:15px;
-                }
-            }
-        }
-    }
-}*/
 
 .overlay {
-    top: 0;
     left: 0;
     width: 100%;
     height: 600px;
-    background-color: $black-base;
-    filter:alpha(opacity=50);
-    -moz-opacity:0.5;
-    -khtml-opacity: 0.5;
-    opacity: 0.5;
-    z-index: 10000;
+    background-color: rgba(0, 0, 0, 0.49);
+    z-index: 1;
+    position: relative;
+}
+
+.section-dark{    
+    background-color: $black;
+    position: relative;
+    color: $white-base;
+    padding: 70px 0;
+    .section-title{
+        color:$secondary-color;
+        text-transform: capitalize;
+    }
+    hr {
+	    width: 100px;
+	    height: 1px;
+	    background-color: $blue;
+	    border-color: $blue;
+    
+    }
+    p{
+        font-weight: 400;
+        color:$gray-lighter;
+    }
+} 
+
+.featured {
+	text-align: center;
+	margin-top: 60px;
+    .fact-icon {
+	    background: $primary-color;
+	    border-radius: 2px;
+	    padding: 24px 0px;
+	    box-shadow: 0 5px 4px rgba(0,0,0,0.2);
+	    margin: 0 auto;
+        @include transition(all 0.3s ease-in-out);
+        &:hover{
+            -webkit-background-clip: 10px;
+            -moz-background-clip: 10px;
+            @include border-radius(50%);
+        }
+        span{
+	        font-size:70px;
+	        color: #fff;
+        }
+        &.fact-icon-color2 {
+	        background:#23B371;
+	        border: 1px solid #23B371;
+        }
+        &.fact-icon-color3 {
+	        background:#BC5139;
+	        border: 1px solid #BC5139;
+        }
+        &.fact-icon-color4 {
+	        background:#D3A550;
+	        border: 1px solid #D3A550;
+        }
+    }
+    h3{
+        margin-top:15px;
+    }
+}
+
+.why-us {
+    color: $white-base;
+    background: #111 url('../img/banner/web-design.jpg') center center no-repeat fixed;
+    background-size: cover;
+    border-bottom: 1px solid $green;
+    border-top: 1px solid $green;
+    max-height: 600px; /* To match overlay */
+    .section-title{
+        color:$secondary-color;
+        text-transform: capitalize;
+        padding-top: 70px;
+    }
 }
 
 .top-well {
-	background-image:url(../images/footer_lodyas.png);
+	background: $primary-color;
 	background-repeat:repeat !important;
 	width: 100%;
 	margin-bottom: 0px;
@@ -573,45 +587,6 @@ img {
     }
 }
 
-/****************  SEASONS    ************/
-.seasons {
-	text-align: center;
-	margin-top: 60px;
-    .fact-icon {
-	    background: #0bb7b7;
-	    border-radius: 2px;
-	    padding: 24px 0px;
-        width: 61%;
-        border: 1px solid #00b1c1;
-	    box-shadow: 0 1px 1px rgba(0,0,0,.2);
-	    margin: 0 auto;
-        @include transition(all 0.3s ease-in-out);
-        &:hover{
-            -webkit-background-clip: 10px;
-            -moz-background-clip: 10px;
-            @include border-radius(50%);
-        }
-        span{
-	        font-size:70px;
-	        color: #fff;
-        }
-        &.fact-icon-color2 {
-	        background:#23B371;
-	        border: 1px solid #23B371;
-        }
-        &.fact-icon-color3 {
-	        background:#BC5139;
-	        border: 1px solid #BC5139;
-        }
-        &.fact-icon-color4 {
-	        background:#D3A550;
-	        border: 1px solid #D3A550;
-        }
-    }
-    h3{
-        margin-top:15px;
-    }
-}
 
 /****************  HOME IMPROVEMENT    ************/
 .home-improvement {
@@ -997,7 +972,6 @@ img {
 
 /****************  WHY US    ************/
 .section-images {
-	padding-top: 80px;
     h2{
         color:$blue;
     }
@@ -1648,99 +1622,6 @@ footer {
     }
 }
 
-
-    /*.top-footer-in {
-	    padding-top: 80px;
-        &.twocolor {
-            .logofooter{
-                img {
-	                margin-top: -10px;
-                }
-            } 
-
-            p {
-	            color: $almost-white;
-	            font-weight: 300;
-                i {
-	                background:#282d33;
-	                color:#0bb7b7;
-	                padding: 7px;
-	                font-size: 16px;
-	                border-radius:2px;
-	                margin-right: 10px;
-                    &.fa-phone {
-	                    padding: 7px 9px;
-                    }
-                    &.fa-facebook {
-	                    padding: 7px 10px;
-                    }
-                }
-
-                a{
-                    color:#0bb7b7;
-                }
-            }
-            
-            .map-back {
-	            background: url(../images/map.png) no-repeat center center; 
-            }
-
-            .tags-img{
-                a {
-	                display: block;
-                    float: left;
-                    margin: 3px 3px 3px 0;
-                    border:3px solid $black;
-                    background: #2a3037;
-                    text-decoration: none;
-                    &:hover {
-	                    border:3px solid $blue;
-                    }
-                }
-            }
-        }
-        
-        h4{
-            color: $white-base;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-        ul.footer-menu {
-	        padding: 0;
-            li{
-                list-style-type: none;
-	            padding: 5px 0;
-                a{
-	                color: $gray-lighter;
-	                font-size: 13px;
-	                text-decoration: none;
-                    &:before {
-                        display: inline-block;
-                        margin-right: 7px;
-                        color: #0dc1c1;
-                        content: "\f105";
-                        font-family: FontAwesome;
-                    }
-                }
-            }
-        }
-    }*/
-
-    /*.info-footer {
-	    background: $black;
-	    padding: 20px 0;
-	    color: $gray-light;
-	    font-weight: 300;
-	    font-size: 14px;
-	    text-align: center;
-        a{
-            color:#0dc1c1;
-        }
-        .ic-fo{
-	        margin-right: 10px;
-	        font-size: 18px;
-        }
-    }*/
 /********************************************************************************************
   PAGE 404 NOT FOUND                                                                                               
 *********************************************************************************************/
@@ -1776,27 +1657,7 @@ footer {
     margin-top: 60px;
 }
 /***** Page Sections ******/
-.section,
-.section-colored {
-    padding: 80px 0;
-}
 
-.section-colored{    
-    background-color: $black;
-    position: relative;
-    color: $white-base;
-    hr {
-	    width: 100px;
-	    height: 1px;
-	    background-color: $blue;
-	    border-color: $blue;
-    
-    }
-    p{
-        font-weight: 400;
-        color:$gray-lighter;
-    }
-} 
 
 .section-ground {
     background-image: url(../images/hexagon.png);
