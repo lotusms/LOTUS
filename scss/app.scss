@@ -1,4 +1,4 @@
-﻿
+
 @import "helpers/utilities";
 @import "helpers/helper";
 @import "helpers/custom-mixins";
@@ -2038,3 +2038,22 @@ footer {
     margin-top: 15px;
 }
 
+/****** Rev Slider ******/
+
+.slider-header{
+    font-family: Raleway;
+    font-weight:100;
+}
+.rev-btn {
+    background: $primary-color;
+    padding: 6px 12px; 
+    @include transition05();
+        
+    a{
+      color: $white-base;  
+    }
+    &:hover{
+       background: $white-base !important; 
+       color: $primary-color !important; 
+    }
+}

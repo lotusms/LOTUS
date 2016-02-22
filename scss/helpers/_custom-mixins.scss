@@ -1,4 +1,4 @@
-﻿/**************
+/**************
 
     MIXINS
 
@@ -57,12 +57,19 @@
     transform: translateX(-50%) translateY(-50%) rotate(45deg);
 }
 
-@mixin transition($val: all 0.3s) {
+@mixin transition($val: all 0.5s linear) {
     -webkit-transition: $val;
     -moz-transition:$val;
     -o-transition:$val;
     -ms-transition:$val;
     transition:$val;
+}
+
+@mixin transition05(){
+    -webkit-transition: all 0.5s linear !important;
+    -moz-transition: all 0.5s linear !important;
+    -o-transition: all 0.5s linear !important;
+    transition: all 0.5s linear !important;
 }
 
 
