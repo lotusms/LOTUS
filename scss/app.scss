@@ -94,8 +94,6 @@ img {
 	max-width: 100%;
 }
 
-
-
 /****************  BUTTON    ************/
 .btn {
 	border: none;
@@ -130,32 +128,24 @@ img {
 .section-title{
     text-align: center;
     font-size: 50px !important;
-    font-weight: 700;
+    font-weight: 500;
     color: $primary-color;
-    font-family: 'roboto';
+    font-family: Raleway;
     span{
 	    color:$blue;
     }
 }
 
 .sub-title {
-	margin-bottom: 40px;
+	margin: 20px auto 40px;
 }
 
 /****************  SCROLLBAR    ************/
-::-webkit-scrollbar {
-    width: 12px;
-}
+::-webkit-scrollbar { width: 12px; }
  
-::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
-    border-radius: 10px;
-}
+::-webkit-scrollbar-track { -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); border-radius: 10px; }
  
-::-webkit-scrollbar-thumb {
-    border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
-}
+::-webkit-scrollbar-thumb { border-radius: 10px; -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); }
 
 .dropdown {
     cursor:pointer;
@@ -167,14 +157,6 @@ img {
   display: table;
 }
 
-.effect-over {
-	background: rgba(0,0,0,0.5);
-	position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-}
 
 /****************  MENU    ************/
 
@@ -239,6 +221,7 @@ img {
         }
         .logo{
             height:$header-height - 5px;
+            opacity: 0;
         }
     }
     .scroll-menu{
@@ -433,8 +416,8 @@ img {
 .overlay {
     left: 0;
     width: 100%;
-    height: 600px;
-    background-color: rgba(0, 0, 0, 0.49);
+    height: $why-us-height;
+    background-color: rgba(0, 0, 0, 0.67);
     z-index: 1;
     position: relative;
 }
@@ -445,7 +428,7 @@ img {
     color: $white-base;
     padding: 70px 0;
     .section-title{
-        color:$secondary-color;
+        color:$blue;
         text-transform: capitalize;
     }
     hr {
@@ -504,11 +487,53 @@ img {
     background-size: cover;
     border-bottom: 1px solid $green;
     border-top: 1px solid $green;
-    max-height: 600px; /* To match overlay */
+    max-height: $why-us-height; /* To match overlay */
     .section-title{
         color:$secondary-color;
         text-transform: capitalize;
         padding-top: 70px;
+    }
+    .section-subtitle{
+        text-align:center;
+    }
+    .why-item {
+        margin-top: 40px;
+        .why-item-icon {
+           i {
+                float: left;
+                padding: 20px;
+                width: 82px;
+                height: 82px;
+                @include border-radius(100%);
+                background: rgba(150, 150, 150, 0.2);
+                border: 2px solid $white-base;
+                text-align: center;
+                color: $white-base;
+                font-size: 40px;
+            } 
+        }
+        &:hover {
+            i {
+                background: rgba(0, 0, 0, 0.5);
+                -webkit-animation-duration: 1s;
+                animation-duration: 1s;
+                -webkit-animation-fill-mode: both;
+                animation-fill-mode: both;
+                -webkit-animation-name: fadeIn;
+                animation-name: fadeIn;
+            }
+        }
+        h4 {
+            font-size: 30px;
+            color: $blue;
+        }
+    }
+    .action{
+        margin: 60px auto;
+        text-align: center;
+        h3{
+            
+        }
     }
 }
 
@@ -522,6 +547,122 @@ img {
     color: $white-base;
     h3, p{
         color: $white-base;
+    }
+}
+
+/****************  PORTFOLIO    ************/
+.portfolio{ 
+    padding:70px 0;
+    .effect-5 {
+        .filter-button-top{
+            .filter {
+                margin: 0 auto 30px auto;
+                color: $gray;
+                text-align: center;
+                padding: 0;
+
+                li {
+                    display: inline-block;
+                    list-style: none;
+                    margin-right: 5px;
+                    padding: 5px 15px;
+                    color: $gray;
+                    text-decoration: none;
+                    border: 1px solid $gray-lightest;
+
+                    &:last-child:after {
+                        content: "";
+                    }
+
+                    &:hover, &:focus{
+                        background: $blue;
+                        color: $white-base;
+                        border: 1px solid $blue;
+                        cursor: pointer;
+                    }
+
+                    .current li, &.active  {
+                        background: $blue;
+                        color: $white-base;
+                        border: 1px solid $blue;
+                    }
+                }
+            }
+        }
+
+        .activegrid{
+            ul{
+                &.nav-pills {
+                    li{
+                        padding: 25px;
+                        margin: 0px 0 0;
+                        display: inline-block;
+                        min-height: 290px;
+                        vertical-align: top;
+                        border-right:0px solid $gray-lighter;
+                        img{
+                            text-align:center;
+                            float:none;
+                            box-shadow: 0 1px 2px rgba(0,0,0,0.5);
+                            margin-bottom:20px;
+                            @include transition-ease-out();
+                        }
+                        &:hover{
+                            img{
+                                @include transform-scale(); 
+                                box-shadow: 0 20px 22px $gray-light;
+                            }
+                        }
+                        >a.btn-lg {
+                            border-radius: 2px;
+                            padding: 6px 12px;
+                        }
+                    }
+                    .description{
+                        margin-left:0px;
+                        margin-top:10px
+                    }
+                    .rectangle-list{
+                        li{
+                            &:after{
+                                display:none;
+                            }
+                        }
+                    }
+                    .cbp-vm-title {
+                        font-size: 1.3em;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+                    .cbp-vm-details {
+                        max-width: 300px;
+                        min-height: 70px;
+                        margin: 0 auto;
+                        color: $black;
+                        font-size: 14px;
+                    } 
+                    .cbp-vm-price {
+                        margin: 10px 0;
+                        font-size: 1.5em;
+                    }
+                }
+            }
+            .content_desc {
+                text-align:left;
+                float: inherit;
+            }
+            
+            #product {
+                .title {
+                    @include h4-font();
+                    @include font-size($h4-size);
+	                color: $blue;
+	                text-decoration: none;
+	                text-transform: uppercase;
+                }
+            }
+        } 
+
     }
 }
 
@@ -587,147 +728,6 @@ img {
     }
 }
 
-
-/****************  HOME IMPROVEMENT    ************/
-.home-improvement {
-	background-color:#015085;
-	width: 100%;	
-	position: relative;	
-    .home3-effect-cover {
-	    background-image:url(../images/texture/grid-pattern.png);
-	    background-repeat:repeat !important;
-	    width: 100%;
-	    height: 100%;
-        position: absolute;
-    }
-
-    .home3-well {
-	    margin-bottom: 0px;
-	    padding: 100px 20px 90px 20px;
-        background: rgba(0,0,0,0.2);
-        color: $white-base;
-        border: 0px;
-	    border-bottom: 0px solid $black;
-        .home3-advert {
-	        font-size: 20px;
-            font-style: italic;
-            font-weight: 400;
-            color: $white-base;
-            line-height: 30px;
-            text-shadow: 0px 1px 2px $black-base;
-            em{
-                font-weight: 600;
-                padding-bottom: 0px;
-                border-bottom: 2px solid $white-base;
-            }
-        }
-        
-        .bt-serv {
-	        width: 100%;
-	        float: left;	
-        }
-
-        .txt-circle-content{
-	        margin: 30px 0 0px 0;
-	        float:left;
-            &.first-ic {
-	            margin: 60px 0 0px 0;
-            }
-
-            .fact-icon {
-                background: darken($blue, 10%); 
-                border-radius: 100%;
-                padding: 10px 3px;
-                margin-right: 20px;
-                color: $black;
-                text-align: center;
-                float: left;
-                @include transition(all 0.3s ease-out);
-                &:hover{
-                    -webkit-transform: scale(1.1);
-                    -moz-transform: scale(1.1);
-                    -ms-transform: scale(1.1);
-                    -o-transform: scale(1.1);
-                    transform: scale(1.1);
-                }
-                span {
-                    font-size: 45px;
-                }
-            }
-
-            h3 {
-	            margin-top: 10px;
-	            text-shadow: 0px 1px 2px $black-base;
-            }
-
-            p {
-                color: $white-base;
-            }
-        }
-    }
-}
-
-/****************  PORTFOLIO    ************/
-.portfolio{    
-    .effect-5 {
-        .filter-button-top{
-            .filter {
-                margin: 0 auto 30px auto;
-                color: $gray;
-                text-align: center;
-                padding: 0;
-
-                li {
-                    display: inline-block;
-                    list-style: none;
-                    margin-right: 5px;
-                    padding: 5px 15px;
-                    color: $gray;
-                    text-decoration: none;
-                    border: 1px solid $gray-lightest;
-
-                    &:last-child:after {
-                        content: "";
-                    }
-
-                    &:hover, &:focus{
-                        background: $blue;
-                        color: $white-base;
-                        border: 1px solid $blue;
-                        cursor: pointer;
-                    }
-
-                    .current li, &.active  {
-                        background: $blue;
-                        color: $white-base;
-                        border: 1px solid $blue;
-                    }
-                }
-            }
-        }
-
-        .activegrid{
-            .nav-pills{
-                > li{
-                    >a.btn-lg {
-	                    border-radius: 2px;
-	                    padding: 6px 12px;
-                    }
-                }
-            }
-
-            #product {
-                .title {
-                    @include h4-font();
-                    @include font-size($h4-size);
-	                color: $blue;
-	                text-decoration: none;
-	                text-transform: uppercase;
-                }
-            }
-        }
-    }
-}
 
 /****************  OUR TEAM    ************/
 #clients-home3{
@@ -990,7 +990,7 @@ img {
 
 /****************  TESTIMONIALS    ************/
 .testimonial-footer-bg {
-    background-image: url('../Images/home-reno.jpg');
+    background-image: url('../img/banner/web-services.jpg');
     background-repeat: no-repeat !important;
 	background-position:bottom center !important;
 	background-attachment: fixed;    
@@ -1000,17 +1000,16 @@ img {
     .well {
         background: rgba(0,0,0,0.8);
         .testimonial-title-right {
-            text-align: right;
-            padding-right: 40px;
-            padding-left: 0;
-            margin-top: 85px;
-            border-right: 1px solid $gray-lighter;
+            text-align: center;
+            margin-top: 70px;
             .section-title {
                 font-size: 40px;
-                line-height: 40px;
+                line-height: 55px;
                 color: $white-base;
+                font-family: Raleway;
+                font-weight:300;
             }
-            .sub-title {
+            p {
                 color: $white-base;
             }
         }
@@ -1018,11 +1017,30 @@ img {
         .owl-carousel {
             .owl-item {
                 border: 0px;
-                .testimon-desc{
-                    p {
+                .testimon-desc {
+                    float: left;
+                    vertical-align: middle;
+                    color: $green;
+                    text-align: center;
+                    width:100%;
+                    p{
+                        font-style: italic;
                         color: $white-base;
+                        font-weight: 300;
+                        margin-top: 20px;
+                        font-size: 18px;
+                        line-height: 20px;
+                        &.nm-name {
+                            margin-top: 5px;
+                            font-size: 19px;
+                            color: $green;
+                            font-weight: 500;
+                        }
+                        span{
+                            color: $green;
+                        }
                     }
-                } 
+                }
             }
         }
     }
@@ -1900,6 +1918,14 @@ footer {
 }
 
 /****** Rev Slider ******/
+
+/****** Fixes a top margin glitch on scroll ******/
+#slider1{
+    top:0;
+    .tp-bgimg.defaultimg {
+        top: 0;
+    }
+}
 
 .slider-header{
     font-family: Raleway;

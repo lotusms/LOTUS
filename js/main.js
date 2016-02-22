@@ -102,42 +102,66 @@ app.controller("SliderCtrl", ["$scope", function ($scope) {
 /*Controller Portfolio and filter Images*/
 
 app.controller("dataImagesWork", function ($scope) {
-$scope.images_work = [
+    $scope.images_work = [
           {
-              "category": 'remodeling',
-              "name": 'Kitchen Reno',
-              "src": "kitchen-reno.png",
-              "description": 'In this project, we replaced all appliances to stainless steal appliances. We were able to reuse the cabinets and re-stain them with a more sleek look. Counter tops and back splash were changed to tie up the design cohesively. '
+              "name": 'PA Liquor Control Board',
+              "src": "Liquor-Control-Board.png",
+              "link": "http://www.finewineandgoodspirits.com/webapp/wcs/stores/servlet/StoreCatalogDisplay?storeId=10051&catalogId=10051&langId=-1"
           },
           {
-              "category": 'lawn',
-              "name": 'Yard Escape',
-              "src": "gallery/exterior10.png",
-              "description": 'This amazing 1 acre front yard preceding a large estate was enhanced and maintained to compliment the natural environment. Trees were branched, flower beds installed, and lawn treated, clened, and mowed to perfection.'
+              "name": 'PA Provider Self Service',
+              "src": "Provider-Services-of-PA.png",
+              "link": 'https://www.pelican.state.pa.us/provider/default.aspx?TYPE=33554433&REALMOID=06-ccc2a1cb-0683-440f-bfa6-cad042af12ba&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-ZW9pIAMntaN%2bR%2fAG5q4UUzXVDz%2bKoMG2pXXJCs1re8tkRKCZKtgqJypoW9Af5ilo&TARGET=-SM-https%3a%2f%2fwww%2epelican%2estate%2epa%2eus%2fprovider%2fui%2fhome%2easpx#'
           },
           {
-              "category": 'repairs',
-              "name": 'Exterior Conditioning',
-              "src": "gallery/exterior19.png",
-              "description": 'Inclement weather and normal wear & tear causes damage on the exterior after a few years. This property was re-painted, and conditioned, as well as repaired for minor leaks and roof damage. These repairs prevented mayor replacements.'
+              "name": 'Job Gateway',
+              "src": "JobGateway.png",
+              "link": 'https://www.jobgateway.pa.gov/jponline/Admin/Common/Portal.aspx?w@cIRFbHc_kyIfEUDPqYpUspb3u_@dnsvVOXen8isTEcdYg4grazpGUr2rtw4QN@odjSSGi8RwBm4_nraX__ITaRZJT8HYWbn3TgGPFcA0A-6xUQEkG_y@pHEMFmjDEEwSppJHEDfIGrVG6yQ4mCf4aazFA4QpEE'
           },
           {
-              "category": 'remodeling',
-              "name": 'Beach Cabana',
-              "src": "4.jpg",
-              "description": 'This amazing beach unit was designed and updated to bring the outside beach atmosphere to the room. Walls were demolished and replaced with glass panels to allow more natural light and a full view to the beach shore. '
+              "name": 'Keystone Canine Rescue',
+              "src": "KeystoneCanineRescue.png",
+              "link": 'http://www.keystonecaninerescue.org/'
           },
           {
-              "category": 'lawn',
-              "name": 'Fall Cleanup',
-              "src": "fall-cleanup.png",
-              "description": 'Fall cleanup was done to this massive yard for a local business to ensure all debri was collected, dead leaves and grass were trimmed from tress to prevent further accumulation and allow for snow fall. '
+              "name": 'Thrifty Elegance',
+              "src": "ThriftyElegance.png",
+              "link": 'http://www.thriftyelegancepa.com/'
           },
           {
-              "category": 'additions',
-              "name": 'Deck Installation',
-              "src": "gallery/exterior1.png",
-              "description": 'For this property we were asked to build an outdoors retrieve with a thermally modified Thorwood deck or low maintenance Composite deck that allowed enough space for large family gathering, sitting, and flows into the yard. '
+              "name": 'Team Balance Harrisburg',
+              "src": "Team-Balance-Harrisburg.png",
+              "link": 'http://www.teambalanceharrisburg.com/'
+          },
+          {
+              "name": 'Witmers Feed & Grain',
+              "src": "Witmers.png",
+              "link": 'http://www.witmersfeed.com/'
+          },
+          {
+              "name": 'R & J Dairy Consulting',
+              "src": "randjdairy.png",
+              "link": 'http://www.randjdairy.com/'
+          },
+          {
+              "name": 'Modern Vintage 1005',
+              "src": "MV1005.png",
+              "link": 'http://www.modernvintage1005.com/'
+          },
+          {
+              "name": 'Feed Commodities',
+              "src": "FeedCommodities.png",
+              "link": 'http://www.feedcommodities.com/'
+          },
+          {
+              "name": 'VisionSpec Home',
+              "src": "VisionSpecHome.png",
+              "link": 'http://www.visionspechome.com/'
+          },
+          {
+              "name": 'Nick & Sons Contracting',
+              "src": "Nick_Sons.png",
+              "link": 'http://www.nickandsonsllc.com/'
           }];
 
 });
@@ -201,7 +225,7 @@ app.directive('owlcarousel', function () {
         link: (scope, element, attr)
         $(element).owlCarousel({
             navigation: false,
-            slideSpeed: 500,
+            slideSpeed: 1000,
             paginationSpeed: 400,
             singleItem: true,
             autoPlay: true

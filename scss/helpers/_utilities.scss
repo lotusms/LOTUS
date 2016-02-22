@@ -1,4 +1,4 @@
-﻿/****** OWL CAROUSEL ******/
+/****** OWL CAROUSEL ******/
 
 /* 
  * 	Core Owl Carousel CSS File
@@ -81,28 +81,8 @@
         float:left;
         border-radius:100%;
     }
-.testimon-desc {
-	width: 80%;
-    float: left;
-    vertical-align: middle;
-    padding: 20px 0 0 20px;
-}
-.testimon-desc p{
-	margin-top: 20px;
-	font-size: 26px;
-	font-style: italic;
-	line-height: 30px;
-	color: #5c5c5c;
-	font-weight: 300;
-}
-.testimon-desc p.nm-name {
-	margin-top: 5px;
-	font-size: 14px;
-	color: #c86e0c;
-}
-.testimon-desc p span {
-	color:#f59123;
-}
+
+
 
 /*
 * 	Owl Carousel Owl Demo Theme 
@@ -715,65 +695,6 @@ html[xmlns] .slides {display: block;}
 
 .cbp-vm-add:before {
 	content: "\f055";
-}
-
-/* Individual view mode styles */
-
-/* Large grid view */
-.activegrid ul.nav-pills  {
-}
-.activegrid .content_desc {
-	text-align:left;
-	float: inherit;
-}
-.activegrid ul.nav-pills li {	
-	padding: 25px;
-	margin: 0px 0 0;
-	display: inline-block;
-	min-height: 350px;
-	vertical-align: top;
-	border-right:0px solid #ccc;
-	
-}
-
-.activegrid .nav-pills .description{margin-left:0px;margin-top:10px}
-.activegrid .nav-pills .rectangle-list li:after{display:none;}
-.activegrid .nav-pills .rating-f .example-f{}
-.activegrid ul.nav-pills li img{
-    text-align:center;
-    float:none;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.5);
-    margin-bottom:20px;
-     -webkit-transition: all 0.3s ease-out;  /* Chrome 1-25, Safari 3.2+ */
-     -moz-transition: all 0.3s ease-out;  /* Firefox 4-15 */
-       -o-transition: all 0.3s ease-out;  /* Opera 10.50–12.00 */
-          transition: all 0.3s ease-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera 12.10+ */
-    }
-.activegrid ul.nav-pills li:hover img {
-	-webkit-transform: scale(1.1);  
-     -moz-transform: scale(1.1);  
-      -ms-transform: scale(1.1);  
-       -o-transform: scale(1.1);  
-          transform: scale(1.1);  
-          box-shadow: 0 20px 22px #888;
-}
-.activegrid .nav-pills .cbp-vm-title {
-	font-size: 1.3em;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.activegrid .nav-pills .cbp-vm-details {
-	max-width: 300px;
-	min-height: 70px;
-	margin: 0 auto;
-	color: #111111;
-    font-size: 14px;
-} 
-
-.activegrid .nav-pills .cbp-vm-price {
-	margin: 10px 0;
-	font-size: 1.5em;
 }
 
 
