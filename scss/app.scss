@@ -156,8 +156,11 @@ img {
   clear: both;
   display: table;
 }
-
-
+.btn-center{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
 /****************  MENU    ************/
 
 .navbar{
@@ -461,6 +464,30 @@ img {
     p{
         font-weight: 400;
         color:$gray-lighter;
+    }
+} 
+
+.section-light{    
+    background-color: $almost-white;
+    position: relative;
+    color: $black;
+    padding: 70px 0;
+    .section-title{
+        color:$primary-color;
+        text-transform: capitalize;
+    }
+    hr {
+        margin:40px auto;
+	    height: 1px;
+	    background-color: $gray-lighter;
+        border-top: none;
+    }
+    p{
+        font-weight: 400;
+        color:$black;
+    }
+    .row{
+        margin-bottom: 30px;
     }
 } 
 
@@ -1165,6 +1192,7 @@ img {
 }
 
 .services-tabs {
+    margin-top:40px;
     .nav-tabs{
         &.nav-justified{
             > li{
@@ -1242,15 +1270,15 @@ img {
     .inner-row {
         display: inline-block;
         margin-bottom: 25px;
-        .services-box-black {
-	        background: $black;
+        .service {
+	        background: $primary-color;
 	        padding: 15px;
             width: 100%;
             h3 {
 	            text-transform: uppercase;
-	            font-weight: 600;
+                text-align: center;
+	            font-weight: 500;
 	            color: $white-base;
-	            letter-spacing: 1px;
                 @include font-size(20px); 
             }
 
@@ -1258,6 +1286,9 @@ img {
                 li{
 	                color: $white-base;
                 }
+            }
+            .btn{
+                margin:0 auto;
             }
         }
     }
