@@ -9,15 +9,20 @@ app.config(['$routeProvider', function ($routeProvider) {
     // About
     .when("/about", { templateUrl: "views/about.html", controller: "PageCtrl" })
     .when("/faq", { templateUrl: "views/faq.html", controller: "PageCtrl" })
+  
     .when("/web-design", { templateUrl: "views/web-design.html", controller: "PageCtrl" })
     .when("/economy-web-design", { templateUrl: "views/economy-web-design.html", controller: "PageCtrl" })
     .when("/business-web-design", { templateUrl: "views/business-web-design.html", controller: "PageCtrl" })
     .when("/marketing-web-design", { templateUrl: "views/marketing-web-design.html", controller: "PageCtrl" })
     .when("/e-commerce-web-design", { templateUrl: "views/e-commerce-web-design.html", controller: "PageCtrl" })
+  
+    .when("/marketing", { templateUrl: "views/marketing.html", controller: "PageCtrl" })
     .when("/branding-design", { templateUrl: "views/branding-design.html", controller: "PageCtrl" })
     .when("/graphic-design", { templateUrl: "views/graphic-design.html", controller: "PageCtrl" })
     .when("/on-page-seo", { templateUrl: "views/on-page-seo.html", controller: "PageCtrl" })
     .when("/social-networks", { templateUrl: "views/social-networks.html", controller: "PageCtrl" })
+  
+    .when("/web-services", { templateUrl: "views/web-services.html", controller: "PageCtrl" })
     .when("/web-maintenance", { templateUrl: "views/web-maintenance.html", controller: "PageCtrl" })
     .when("/speed-service", { templateUrl: "views/speed-service.html", controller: "PageCtrl" })
     .when("/site-optimization", { templateUrl: "views/site-optimization.html", controller: "PageCtrl" })
@@ -247,4 +252,70 @@ app.directive('owlcarousel', function () {
     }
 
 });
+
+//Carousel general management
+app.directive('designcarousel', function () {
+
+    var linker = function (scope, element, attr) {
+        link: (scope, element, attr)
+        $(element).owlCarousel({
+            navigation: true,
+            slideSpeed: 1000,
+            paginationSpeed: 400,
+            items : 6,
+            itemsDesktop : [1419,4],
+            itemsDesktopSmall : [992,2],
+            itemsTablet : [767,1],
+            singleItem : false,
+            itemsScaleUp : false,
+            autoPlay: true,
+            responsive: true,
+            responsiveRefreshRate : 1,
+            dragBeforeAnimFinish : true,
+            mouseDrag: true,
+            touchDrag : true
+        });
+
+    }
+
+    return {
+        restrict: "A",
+        link: linker
+    }
+
+});
+
+
+//Carousel general management
+app.directive('brandingcarousel', function () {
+
+    var linker = function (scope, element, attr) {
+        link: (scope, element, attr)
+        $(element).owlCarousel({
+            navigation: true,
+            slideSpeed: 1000,
+            paginationSpeed: 400,
+            items : 6,
+            itemsDesktop : [1419,4],
+            itemsDesktopSmall : [992,2],
+            itemsTablet : [767,1],
+            singleItem : false,
+            itemsScaleUp : false,
+            autoPlay: true,
+            responsive: true,
+            responsiveRefreshRate : 1,
+            dragBeforeAnimFinish : true,
+            mouseDrag: true,
+            touchDrag : true
+        });
+
+    }
+
+    return {
+        restrict: "A",
+        link: linker
+    }
+
+});
+
 
