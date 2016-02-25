@@ -1360,7 +1360,12 @@ input[type='checkbox']:checked.toggle {
 }
 
 
-
+.clients{
+    transform: translateY(43%);
+    .img-customer {
+        transform: translateY(-43%);
+    } 
+}
 
 /****************  FOOTER    ************/
 footer {
@@ -1761,4 +1766,18 @@ footer {
         position: relative;
         bottom: -66px;
     }
+}
+
+
+
+
+
+#google-container {
+    position: relative;
+    width: 100%;
+    height: 450px;
+}
+
+#cd-google-map {
+	position: relative;
 }
