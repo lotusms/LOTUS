@@ -39,9 +39,516 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 
 app.controller('PageCtrl', function ( $scope, $location, $http ) {
-        
-
+    
+    $('.filter li').on('click', function () {
+        $('li').removeClass('active');
+        $(this).addClass('active');
+    });
+         
+    $(":checkbox").on("click", function () { 
+       var $checkbox = $(this);
+       $checkbox.attr('checked', !$checkbox.attr('checked'));
+    });  
+    
+    //REV-SLIDERS
+    
+    jQuery(document).ready(function() {		
+        jQuery("#slider1").revolution({
+            sliderType:"standard",
+            sliderLayout:"fullscreen",
+            autoHeight:"on",	
+            delay:5000,
+            navigation : {
+              //keyboardNavigation:"on",	
+              //keyboard_direction:"horizontal",
+              //mouseScrollNavigation:"off",  			
+              onHoverStop:"on",
+              touch:{
+                     touchenabled:"on",
+                     swipe_treshold : 75,
+                     swipe_min_touches : 1,
+                     drag_block_vertical:false,
+                     swipe_direction:"horizontal"
+                        },
+              arrows: {
+                 style:"",
+                 enable:true,
+                 hide_onmobile:true,
+                 hide_onleave:true,
+                 hide_delay:200,
+                 hide_delay_mobile:1200,
+                 hide_under:0,
+                 hide_over:9999,
+                 tmp:'',
+                 left : {
+                        h_align:"left",
+                        v_align:"center",
+                        h_offset:20,
+                        v_offset:0,
+                 },
+                 right : {
+                        h_align:"right",
+                        v_align:"center",
+                        h_offset:20,
+                        v_offset:0
+                 }
+              },
+              bullets: {
+                 style:"",
+                 enable:false,
+                 hide_onmobile:false,
+                 hide_onleave:true,
+                 hide_delay:200,
+                 hide_delay_mobile:1200,
+                 hide_under:0,
+                 hide_over:9999,
+                 direction:"horizontal",
+                 h_align:"left",
+                 v_align:"center",
+                 space:0,
+                 h_offset:20,
+                 v_offset:0,
+                 tmp:'<span class="tp-bullet-image"></span><span class="tp-bullet-title"></span>'
+             },
+             thumbnails: {
+                 style:"",
+                 enable:false,
+                 width:100,
+                 height:50,
+                 min_width:100,
+                 wrapper_padding:2,
+                 wrapper_color:"#f5f5f5",
+                 wrapper_opacity:1,
+                 tmp:'<span class="tp-thumb-image"></span><span class="tp-thumb-title"></span>',
+                 visibleAmount:5,
+                 hide_onmobile:false,
+                 hide_onleave:true,
+                 hide_delay:200,
+                 hide_delay_mobile:1200,
+                 hide_under:0,
+                 hide_over:9999,
+                 direction:"horizontal",
+                 span:false,
+                 position:"inner",
+                 space:2,
+                 h_align:"left",
+                 v_align:"center",
+                 h_offset:20,
+                 v_offset:0
+             },
+             tabs: {
+                 style:"",
+                 enable:false,
+                 width:100,
+                 min_width:100,
+                 height:50,
+                 wrapper_padding:10,
+                 wrapper_color:"#f5f5f5",
+                 wrapper_opacity:1,
+                 tmp:'<span class="tp-tab-image"></span>',
+                 visibleAmount:5,
+                 hide_onmobile:false,
+                 hide_onleave:true,
+                 hide_delay:200,
+                 hide_delay_mobile:1200,
+                 hide_under:0,
+                 hide_over:9999,
+                 direction:"horizontal",
+                 span:false,
+                 space:0,
+                 position:"inner",
+                 h_align:"left",
+                 v_align:"center",
+                 h_offset:20,
+                 v_offset:0
+             }
+            },
+            fullScreenOffsetContainer:"#header",
+            lazyType:"smart",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });	
+        jQuery("#brandingSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });	
+        jQuery("#businessSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });
+        jQuery("#ecommerceSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });	
+        jQuery("#economySlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });
+        jQuery("#graphicSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });
+        jQuery("#marketingwebSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });
+        jQuery("#marketingSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });	
+        jQuery("#seoSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });
+        jQuery("#paymentSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });		
+        jQuery("#optimizationSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });		
+        jQuery("#socialSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });		
+        jQuery("#speedSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });		
+        jQuery("#webDesignSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });
+        jQuery("#maintenanceSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });					
+        jQuery("#webServicesSlider").revolution({
+            sliderType:"hero",
+            sliderLayout:"fullwidth",
+            autoHeight:"off",
+            navigation : { 			
+              onHoverStop:"off",
+              touch:{ touchenabled:"off" },
+              arrows: { enable:false },
+              bullets: { enable:false },
+              thumbnails: { enable:false },
+              tabs: { enable:false }
+            },
+            parallax:{
+               type:"on",
+               levels:[5,10,15,20,25,30,35,40,45,50,55,60,65,70,75,80,85],
+               origo:"slidercenter",
+               speed:400,
+               bgparallax:"on",
+               disable_onmobile:"off"
+            },
+            fullScreenOffsetContainer:"#header",
+            responsiveLevels:[4096,1024,778,480],
+            gridwidth:[1200,991,768,480],
+            gridheight:[600,600,980,700]		
+        });	
+    });	
+    
+    
 });
+
 
 /***Only for Preview ***/
 app.controller('ExampleController', ['$scope', function($scope) {
@@ -105,13 +612,6 @@ app.controller("SliderCtrl", ["$scope", function ($scope) {
                 //tmp: "<span class=""> {{title}} </span>", visibleAmount: 3, hide_onmobile: true, hide_under: 480, hide_onleave: false, hide_delay: 200, direction: "horizontal", span: true, position: "inner", space: 1, h_align: "left", v_align: "top", h_offset: 30, v_offset: 30 }
             }
         }
-
-        //jsFileLocation: "",
-        //visibilityLevels: [1240, 1024, 778, 480],
-        //hideThumbsOnMobile: "off"
-        //};
-
-
     }
 }]);
 
@@ -317,5 +817,6 @@ app.directive('brandingcarousel', function () {
     }
 
 });
+
 
 
