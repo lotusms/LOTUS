@@ -220,7 +220,7 @@ img {
         }
         .logo{
             height:$header-height - 5px;
-            opacity: 0;
+            opacity: 1;
         }
     }
     .scroll-menu{
@@ -1103,7 +1103,7 @@ img {
 
 .contact-details{
     .fa{
-        background: $blue;
+        background: $primary-color;
         color: $white-base;
         padding: 7px;
         @include font-size(16px); 
@@ -1768,10 +1768,6 @@ footer {
     }
 }
 
-
-
-
-
 #google-container {
     position: relative;
     width: 100%;
@@ -1780,4 +1776,43 @@ footer {
 
 #cd-google-map {
 	position: relative;
+}
+
+.angular-google-map-container { 
+    height: 450px;
+    border-bottom: 3px solid $green
+}
+.ang-map{
+    margin-bottom:30px;
+}
+
+.social {
+    .fa-facebook{
+        &:hover {
+            background: #3b5998;
+            color: #fff;
+        }
+    }
+    .fa-twitter{
+        &:hover {
+            background: #00CAFB;
+            color: #fff;
+        }
+    }
+    .fa-google-plus{
+        &:hover {
+            background: #D23A1D;
+            color: #fff;
+        }
+    }
+    .fa-linkedin{
+        &:hover {
+            background: #007bb6;
+            color: #fff;
+        }
+    }
+}
+
+.martop50{
+    margin-top:50px;
 }

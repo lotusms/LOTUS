@@ -1,5 +1,5 @@
 
-var app = angular.module('angula', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial', 'rev.slider']);
+var app = angular.module('angula', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial', 'uiGmapgoogle-maps', 'rev.slider']);
 
 app.config(['$routeProvider', function ($routeProvider) {
   $routeProvider
@@ -29,9 +29,12 @@ app.config(['$routeProvider', function ($routeProvider) {
     .when("/payment-plans", { templateUrl: "views/payment-plans.html", controller: "PageCtrl" })
     .when("/quote-request", { templateUrl: "views/quote-request.html", controller: "PageCtrl" })
     .when("/contact", { templateUrl: "views/contact.html", controller: "PageCtrl" })
+  
     .when("/privacy-policy", { templateUrl: "views/privacy-policy.html", controller: "PageCtrl" })
+    .when("/return-policy", { templateUrl: "views/return-policy.html", controller: "PageCtrl" })
     .when("/terms-of-use", { templateUrl: "views/terms-of-use.html", controller: "PageCtrl" })
     .when("/sitemap", { templateUrl: "views/sitemap.html", controller: "PageCtrl" })
+  
     .when("/404", { templateUrl: "views/404.html", controller: "PageCtrl" })
 
     .otherwise("/404", { templateUrl: "views/404.html", controller: "PageCtrl" });
@@ -53,122 +56,6 @@ app.controller('PageCtrl', function ( $scope, $location, $http ) {
     //REV-SLIDERS
     
     jQuery(document).ready(function() {		
-        jQuery("#slider1").revolution({
-            sliderType:"standard",
-            sliderLayout:"fullscreen",
-            autoHeight:"on",	
-            delay:5000,
-            navigation : {
-              //keyboardNavigation:"on",	
-              //keyboard_direction:"horizontal",
-              //mouseScrollNavigation:"off",  			
-              onHoverStop:"on",
-              touch:{
-                     touchenabled:"on",
-                     swipe_treshold : 75,
-                     swipe_min_touches : 1,
-                     drag_block_vertical:false,
-                     swipe_direction:"horizontal"
-                        },
-              arrows: {
-                 style:"",
-                 enable:true,
-                 hide_onmobile:true,
-                 hide_onleave:true,
-                 hide_delay:200,
-                 hide_delay_mobile:1200,
-                 hide_under:0,
-                 hide_over:9999,
-                 tmp:'',
-                 left : {
-                        h_align:"left",
-                        v_align:"center",
-                        h_offset:20,
-                        v_offset:0,
-                 },
-                 right : {
-                        h_align:"right",
-                        v_align:"center",
-                        h_offset:20,
-                        v_offset:0
-                 }
-              },
-              bullets: {
-                 style:"",
-                 enable:false,
-                 hide_onmobile:false,
-                 hide_onleave:true,
-                 hide_delay:200,
-                 hide_delay_mobile:1200,
-                 hide_under:0,
-                 hide_over:9999,
-                 direction:"horizontal",
-                 h_align:"left",
-                 v_align:"center",
-                 space:0,
-                 h_offset:20,
-                 v_offset:0,
-                 tmp:'<span class="tp-bullet-image"></span><span class="tp-bullet-title"></span>'
-             },
-             thumbnails: {
-                 style:"",
-                 enable:false,
-                 width:100,
-                 height:50,
-                 min_width:100,
-                 wrapper_padding:2,
-                 wrapper_color:"#f5f5f5",
-                 wrapper_opacity:1,
-                 tmp:'<span class="tp-thumb-image"></span><span class="tp-thumb-title"></span>',
-                 visibleAmount:5,
-                 hide_onmobile:false,
-                 hide_onleave:true,
-                 hide_delay:200,
-                 hide_delay_mobile:1200,
-                 hide_under:0,
-                 hide_over:9999,
-                 direction:"horizontal",
-                 span:false,
-                 position:"inner",
-                 space:2,
-                 h_align:"left",
-                 v_align:"center",
-                 h_offset:20,
-                 v_offset:0
-             },
-             tabs: {
-                 style:"",
-                 enable:false,
-                 width:100,
-                 min_width:100,
-                 height:50,
-                 wrapper_padding:10,
-                 wrapper_color:"#f5f5f5",
-                 wrapper_opacity:1,
-                 tmp:'<span class="tp-tab-image"></span>',
-                 visibleAmount:5,
-                 hide_onmobile:false,
-                 hide_onleave:true,
-                 hide_delay:200,
-                 hide_delay_mobile:1200,
-                 hide_under:0,
-                 hide_over:9999,
-                 direction:"horizontal",
-                 span:false,
-                 space:0,
-                 position:"inner",
-                 h_align:"left",
-                 v_align:"center",
-                 h_offset:20,
-                 v_offset:0
-             }
-            },
-            fullScreenOffsetContainer:"#header",
-            lazyType:"smart",
-            responsiveLevels:[4096,1024,778,480],
-            gridwidth:[1200,991,768,480],
-            gridheight:[600,600,980,700]		
-        });	
         jQuery("#brandingSlider").revolution({
             sliderType:"hero",
             sliderLayout:"fullwidth",
@@ -843,5 +730,49 @@ app.directive('brandingcarousel', function () {
 
 });
 
+
+app.factory("Markers", function(){
+  var Markers = [
+    {
+      "id": "0",
+      "coords": {
+        "latitude": "40.273191",
+        "longitude": "-76.886701"
+      },
+      "window": {
+        "title": "Harrisburg, PA"
+      }
+    },
+    {
+      "id": "1",
+      "coords": {
+        "latitude": "39.962598",
+        "longitude": "-76.727745"
+      },
+      "window" : {
+        "title": "York, PA"
+      }
+    },
+    {
+      "id": "2",
+      "coords": {
+        "latitude": "40.037875",
+        "longitude": "-76.305514"
+      },
+      "window" : {
+        "title": "Lancaster, PA"
+      }
+    }
+  ];
+  return Markers;
+});
+
+app.controller("gMap",function($scope,Markers){
+  $scope.map = { 
+    center: { latitude: 40.152872, longitude: -76.602745 }, 
+    zoom: 10 
+  };
+  $scope.markers = Markers;
+});
 
 
