@@ -376,7 +376,7 @@ img {
 .overlay {
     left: 0;
     width: 100%;
-    height: $why-us-height;
+    /*height: $why-us-height;*/
     background-color: rgba(0, 0, 0, 0.67);
     z-index: 1;
     position: relative;
@@ -476,7 +476,7 @@ img {
     background-size: cover;
     border-bottom: 1px solid $green;
     border-top: 1px solid $green;
-    max-height: $why-us-height; /* To match overlay */
+    /* max-height: $why-us-height; To match overlay */
     .section-title{
         color:$secondary-color;
         text-transform: capitalize;
@@ -886,7 +886,7 @@ img {
 	        padding: 15px;
             width: 100%;
             height: 100%;
-            min-height: 270px;
+            margin-bottom: 30px;
             h3 {
 	            text-transform: uppercase;
                 text-align: center;
@@ -896,6 +896,7 @@ img {
             }
 
             ul{
+                margin-left: -20px;
                 li{
 	                color: $white-base;
                 }
@@ -907,10 +908,6 @@ img {
             .btn-center{
                 display: block;
                 text-align: center;
-                position: absolute;
-                bottom: 10px;
-                left: 25%;
-                transform: translateX(10%);
                 .btn{
                     margin:0 auto;
                 }
@@ -1220,6 +1217,11 @@ img {
 	        border-color: $white-base!important;
         }
     }
+}
+
+
+.panel.panel-default {
+    margin-bottom: 30px;
 }
 
 
@@ -1815,4 +1817,8 @@ footer {
 
 .martop50{
     margin-top:50px;
+}
+
+.marbot20{
+    margin-bottom:20px;
 }
