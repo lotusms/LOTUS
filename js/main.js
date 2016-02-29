@@ -775,4 +775,19 @@ app.controller("gMap",function($scope,Markers){
   $scope.markers = Markers;
 });
 
+// create angular controller
+app.controller('form', function($scope) {
 
+	// function to submit the form after all validation has occurred			
+	$scope.submitForm = function(isValid) {
+
+		// check to make sure the form is completely valid
+		if (isValid) { 
+            angular.element(successModal).modal("show");
+			
+            //alert('our form is amazing');
+		}
+
+	};
+
+});

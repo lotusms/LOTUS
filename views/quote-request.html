@@ -3,7 +3,7 @@
 <div class="section-light">
     <div class="container">
         <div class="row quote-request-form">
-            <div class="col-xs-12">
+            <div class="col-xs-12" ng-controller="form">
                 <h1 class="section-title">Let's Get Started!</h1>
 
                 <p class="contact-sub-txt">Use the form below only for the purpose of requesting a quote for work you need. For all other general questions please refer to our <a href="#/contact">Contact Form</a> page.</p>
@@ -18,44 +18,48 @@
                     </div>
                 </div>
 
-                <form id="quote-form" role="form" method="POST" action="#">
+                <form id="quote-form" name="QuoteForm" role="form" method="POST" action="quote-form.php" ng-submit="submitForm(QuoteForm.$valid)" novalidate>
                     <span class="notice">All fields marked required <span class="required">*</span> mut be filled out.</span>
                     <div class="row">
-                        <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_name">Name <span class="required">*</span></label>
-                            <input type="text" name="contact_name" placeholder="e.g. Jhon Smith" class="form-control form-control-success" id="name">
+                        <div class="form-group col-xs-12 col-sm-12 col-md-3" ng-class="{ 'has-error' : QuoteForm.quote_name.$invalid && !QuoteForm.quote_name.$pristine }">
+                            <label for="quote_name">Name <span class="required">*</span></label>
+                            <input type="text" name="quote_name" placeholder="e.g. Jhon Smith" class="form-control form-control-success" id="quote_name" ng-model="name" ng-required="true">
+                            <p ng-show="QuoteForm.quote_name.$invalid && !QuoteForm.quote_name.$pristine" class="help-block">You name is required.</p>
                         </div>
 
-                        <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_company">Company Name <span class="required">*</span></label>
-                            <input type="text" name="contact_company" placeholder="e.g. Angu Studio" class="form-control form-control-success" id="company">
+                        <div class="form-group col-xs-12 col-sm-12 col-md-3" ng-class="{ 'has-error' : QuoteForm.quote_company.$invalid && !QuoteForm.quote_company.$pristine }">
+                            <label for="quote_company">Company Name <span class="required">*</span></label>
+                            <input type="text" name="quote_company" placeholder="e.g. Angu Studio" class="form-control form-control-success" id="quote_company" ng-model="company" ng-required="true">
+                            <p ng-show="QuoteForm.quote_company.$invalid && !QuoteForm.quote_company.$pristine" class="help-block">You company name is required.</p>
                         </div>
 
-                        <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_email">Email Address <span class="required">*</span></label>
-                            <input type="email" name="contact_email" placeholder="e.g. mail@example.com" class="form-control form-control-success" id="email">
+                        <div class="form-group col-xs-12 col-sm-12 col-md-3" ng-class="{ 'has-error' : QuoteForm.quote_email.$invalid && !QuoteForm.quote_email.$pristine }">
+                            <label for="quote_email">Email Address <span class="required">*</span></label>
+                            <input type="email" name="quote_email" placeholder="e.g. mail@example.com" class="form-control form-control-success" id="quote_email" ng-model="email" ng-required="true">
+                            <p ng-show="QuoteForm.quote_email.$invalid && !QuoteForm.quote_email.$pristine" class="help-block">Enter a valid email.</p>
                         </div>
 
-                        <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_phone">Phone Number <span class="required">*</span></label>
-                            <input type="phone" name="contact_phone" placeholder="e.g. 555-945-0090" class="form-control form-control-success" id="phone">
+                        <div class="form-group col-xs-12 col-sm-12 col-md-3" ng-class="{ 'has-error' : QuoteForm.quote_phone.$invalid && !QuoteForm.quote_phone.$pristine }">
+                            <label for="quote_phone">Phone Number <span class="required">*</span></label>
+                            <input type="phone" name="quote_phone" placeholder="e.g. 555-945-0090" class="form-control form-control-success" id="quote_phone" ng-minlength="10" ng-maxlength="10" ng-model="phone" ng-required="true" ng-pattern="/^(\+?(\d{1}|\d{2}|\d{3})[- ]?)?\d{3}[- ]?\d{3}[- ]?\d{4}$/">
+                            <p ng-show="QuoteForm.quote_phone.$error.pattern" class="help-block">Phone number is invalid.</p>
                         </div>
                     </div>
 
                     <div class="row">
-                        <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_address">Address <span class="required">*</span></label>
-                            <input type="text" name="contact_address" placeholder="e.g. 12 E. Main St" class="form-control form-control-success" id="address">
+                        <div class="form-group col-xs-12 col-sm-12 col-md-3">
+                            <label for="quote_address">Address <span class="required">*</span></label>
+                            <input type="text" name="quote_address" placeholder="e.g. 12 E. Main St" class="form-control form-control-success" id="quote_address">
                         </div>
 
                         <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_city">City <span class="required">*</span></label>
-                            <input type="text" name="contact_city" placeholder="e.g. Harrisburg" class="form-control form-control-success" id="city">
+                            <label for="quote_city">City <span class="required">*</span></label>
+                            <input type="text" name="quote_city" placeholder="e.g. Harrisburg" class="form-control form-control-success" id="quote_city">
                         </div>
 
                         <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_state">State <span class="required">*</span></label>
-                            <select id="state" name="contact_state" class="form-control form-control-success">
+                            <label for="quote_state">State <span class="required">*</span></label>
+                            <select id="quote_state" name="quote_state" class="form-control form-control-success">
                                 <option>Select One</option>
                                 <option value="AL">Alabama</option>
                                 <option value="AK">Alaska</option>
@@ -112,39 +116,40 @@
                         </div>
 
                         <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_zip">Zip <span class="required">*</span></label>
-                            <input type="text" name="contact_zip" placeholder="e.g. 23456" class="form-control form-control-success" id="zip">
+                            <label for="quote_zip">Zip <span class="required">*</span></label>
+                            <input type="text" name="quote_zip" placeholder="e.g. 23456" class="form-control form-control-success" id="quote_zip">
                         </div>
                     </div>
                     <h4>Links to other websites that inspired me</h4>
                     <div class="row">
                         <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_link1">Link 1 </label>
-                            <input type="text" name="contact_link1" placeholder="e.g. www.coolwebsite1.com" class="form-control form-control-success" id="link1">
+                            <label for="quote_link1">Link 1 </label>
+                            <input type="text" name="quote_link1" placeholder="e.g. www.coolwebsite1.com" class="form-control form-control-success" id="quote_link1">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_link2">Link 2 </label>
-                            <input type="text" name="contact_link2" placeholder="e.g. www.coolwebsite1.com" class="form-control form-control-success" id="link2">
+                            <label for="quote_link2">Link 2 </label>
+                            <input type="text" name="quote_link2" placeholder="e.g. www.coolwebsite1.com" class="form-control form-control-success" id="quote_link2">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_link3">Link 3 </label>
-                            <input type="text" name="contact_link3" placeholder="e.g. www.coolwebsite1.com" class="form-control form-control-success" id="link3">
+                            <label for="quote_link3">Link 3 </label>
+                            <input type="text" name="quote_link3" placeholder="e.g. www.coolwebsite1.com" class="form-control form-control-success" id="quote_link3">
                         </div>
                         <div class="form-group col-xs-12 col-sm-12 col-md-3 has-success">
-                            <label for="contact_link4">Link 4 </label>
-                            <input type="text" name="contact_link4" placeholder="e.g. www.coolwebsite1.com" class="form-control form-control-success" id="link4">
+                            <label for="quote_link4">Link 4 </label>
+                            <input type="text" name="quote_link4" placeholder="e.g. www.coolwebsite1.com" class="form-control form-control-success" id="quote_link4">
                         </div>
                     </div>
                     <div class="row">
-                        <div class="form-group col-xs-12">
-                            <label for="contact_projDetails">Project Details</label>
-                            <textarea name="contact_projDetails" class="form-control" rows="12" id="projDetails"></textarea>
+                        <div class="form-group col-xs-12" ng-class="{ 'has-error' : QuoteForm.quote_details.$invalid && !QuoteForm.quote_details.$pristine }">
+                            <label for="quote_details">Project Details</label>
+                            <textarea name="quote_details" class="form-control" rows="12" id="quote_details" ng-model="text" ng-minlength="20" ng-required="true"></textarea>
+                            <p ng-show="QuoteForm.quote_details.$error.minlength" class="help-block">Your project details must be longer than 20 characters.</p>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-lg-12">
                             <input type="hidden" name="save" value="contact">
-                            <button type="submit" class="btn btn-primary bt-contact-submit">Submit</button>
+                            <button type="submit" class="btn btn-primary bt-contact-submit" ng-disabled="QuoteForm.$invalid">Submit</button>
                             <p class="success">Your message has been sent successfully.</p>
 
                             <p class="error">E-mail must be valid or message must be longer than 20 characters.</p>
@@ -155,62 +160,3 @@
         </div>
     </div>
 </div>
-
-
-<script type="text/javascript">
-    /********************************************
-    QUOTE FORM CONTROL
-    ********************************************/
-
-    $(function () {
-        "use strict";
-        $('#question-form').submit(function (e) {
-            e.preventDefault();
-            var form = $(this);
-            var name = $("#name").val();
-            var email = $("#email").val();
-            var text = $("#message").val();
-            var dataString = 'name=' + name + '&email=' + email + '&message=' + text;
-
-            function isValidEmail(emailAddress) {
-                var pattern = new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);
-                return pattern.test(emailAddress);
-            };
-
-             if (isValidEmail(email) && (text.length > 20) && (name.length > 1)) {
-                $.ajax({
-                    type: 'POST',
-                    url: "contact_form/question_process.php",
-                    data: dataString,
-                    success: function () {
-                        $('.success').fadeIn(1000);
-                        $("#name").val("");
-                        $("#email").val("");
-                        $("#message").val("");
-                    }
-                });
-            } else {
-                $('.error').fadeIn(1000);
-            }
-
-        });
-
-       // $('input[type="checkbox"]').prop("indeterminate", false);
-
-        $('input[type="checkbox"]').click(function () {
-            if ($(this).closest("span").hasClass("UndefinedCheckboxState")) {
-                $(this).prop("indeterminate", false);
-                $(this).prop("checked", true);
-            }
-        });
-
-        //$('input[type="radio"]').prop("indeterminate", true);
-
-        $('input[type="radio"]').click(function () {
-            if ($(this).closest("span").hasClass("UndefinedCheckboxState")) {
-                $(this).prop("indeterminate", false);
-                $(this).prop("checked", true);
-            }
-        });
-    });
-</script>
