@@ -133,6 +133,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include=".gitattributes" />
+    <Content Include="css\animate.min.css" />
     <Content Include="css\animate.css" />
     <Content Include="css\app.min.css" />
     <Content Include="css\bootstrap.min.css" />
@@ -186,6 +187,7 @@
     <Content Include="img\backgrounds\specs.png" />
     <Content Include="img\backgrounds\white.png" />
     <Content Include="img\bag.jpg" />
+    <Content Include="img\banner\Liquor-Control-Board.png" />
     <Content Include="img\banner\marketing.png" />
     <Content Include="img\banner\web-design.jpg" />
     <Content Include="img\banner\web-services.jpg" />
@@ -301,12 +303,16 @@
     <Content Include="js\cart.js" />
     <Content Include="js\controller.js" />
     <Content Include="js\gallery\jquery.easing.1.3.js" />
+    <Content Include="js\gallery\jquery.fancybox.min.js" />
     <Content Include="js\gallery\jquery.fancybox.js" />
     <Content Include="js\gallery\jquery.fancybox.pack.js" />
-    <Content Include="js\gallery\jquery.mousewheel-3.0.6.pack.js" />
-    <Content Include="js\jquery.appear.js" />
+    <Content Include="js\gallery\jquery.mousewheel-3.0.6.pack.min.js" />
+    <Content Include="js\jquery.appear.min.js" />
     <Content Include="js\jquery.backstretch.min.js" />
     <Content Include="js\jquery.min.js" />
+    <Content Include="js\main.min.js" />
+    <Content Include="js\minislide\shBrushJScript.min.js" />
+    <Content Include="js\minislide\shBrushXml.min.js" />
     <Content Include="js\revSlider\captions-original.css" />
     <Content Include="js\revSlider\jquery.themepunch.revolution.min.js" />
     <Content Include="js\main.js" />
@@ -315,8 +321,8 @@
     <Content Include="js\minislide\jquery.flexslider.js" />
     <Content Include="js\minislide\shBrushJScript.js" />
     <Content Include="js\minislide\shBrushXml.js" />
-    <Content Include="js\minislide\shCore.js" />
-    <Content Include="js\modernizr.js" />
+    <Content Include="js\minislide\shCore.min.js" />
+    <Content Include="js\modernizr.min.js" />
     <Content Include="js\owl_carousel\owl.carousel.js" />
     <Content Include="js\owl_carousel\owl.carousel.min.js" />
     <Content Include="js\retina.min.js" />
@@ -398,7 +404,9 @@
     <Content Include="phpmailer\travis.phpunit.xml.dist" />
     <Content Include="revolution\.DS_Store" />
     <Content Include="revolution\css\.DS_Store" />
+    <Content Include="revolution\css\captions-original.min.css" />
     <Content Include="revolution\css\captions-original.css" />
+    <Content Include="revolution\css\settings.min.css" />
     <Content Include="revolution\css\settings.css" />
     <Content Include="revolution\fonts\.DS_Store" />
     <Content Include="revolution\fonts\pe-icon-7-stroke\css\helper.css" />
@@ -425,6 +433,7 @@
     <Content Include="revolution\js\extensions\revolution.extension.video.min.js" />
     <Content Include="revolution\js\jquery.themepunch.revolution.min.js" />
     <Content Include="revolution\js\jquery.themepunch.tools.min.js" />
+    <Content Include="revolution\js\jquery.themepunch.tools.js" />
     <Content Include="scss\app.css" />
     <Content Include="scss\app.css.map" />
     <Content Include="scss\responsive.css" />
@@ -437,13 +446,25 @@
     <Content Include="video\Lotus_Marketing_Solutions.ogv" />
     <Content Include="views\404.html" />
     <Content Include="views\about.html" />
+    <Content Include="views\branding-design.html" />
+    <Content Include="views\business-web-design.html" />
     <Content Include="views\contact.html" />
+    <Content Include="views\e-commerce-web-design.html" />
+    <Content Include="views\economy-web-design.html" />
     <Content Include="views\faq.html" />
+    <Content Include="views\graphic-design.html" />
     <Content Include="views\home.html" />
+    <Content Include="views\marketing-web-design.html" />
+    <Content Include="views\marketing.html" />
+    <Content Include="views\on-page-seo.html" />
+    <Content Include="views\payment-plans.html" />
     <Content Include="views\privacy-policy.html" />
     <Content Include="views\quote-request.html" />
-    <Content Include="views\services.html" />
+    <Content Include="views\return-policy.html" />
+    <Content Include="views\site-optimization.html" />
     <Content Include="views\sitemap.html" />
+    <Content Include="views\social-networks.html" />
+    <Content Include="views\speed-service.html" />
     <Content Include="views\terms-of-use.html" />
     <Content Include="scss\app.scss" />
     <Content Include="scss\bootstrap\.csscomb.json" />
@@ -546,5 +567,8 @@
     <Content Include="scss\responsive.scss" />
     <Content Include="partials\footer.html" />
     <Content Include="partials\header.html" />
+    <Content Include="views\web-design.html" />
+    <Content Include="views\web-maintenance.html" />
+    <Content Include="views\web-services.html" />
   </ItemGroup>
 </Project>
