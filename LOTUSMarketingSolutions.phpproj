@@ -311,6 +311,7 @@
     <Content Include="js\jquery.backstretch.min.js" />
     <Content Include="js\jquery.min.js" />
     <Content Include="js\main.min.js" />
+    <Content Include="js\main.min.js.map" />
     <Content Include="js\minislide\shBrushJScript.min.js" />
     <Content Include="js\minislide\shBrushXml.min.js" />
     <Content Include="js\revSlider\captions-original.css" />

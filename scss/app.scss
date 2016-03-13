@@ -1782,10 +1782,12 @@ footer {
 
 .angular-google-map-container { 
     height: 450px;
-    border-bottom: 3px solid $green
+    border-bottom: 3px solid $green;
 }
 .ang-map{
     margin-bottom:30px;
+    height: 450px;
+    border-bottom: 3px solid $green; 
 }
 
 .social {
