@@ -724,6 +724,7 @@ app.factory("Markers", function(){
 app.controller("gMap",function($scope,Markers){
     $scope.map = { 
     center: { latitude: 40.152872, longitude: -76.602745 }, 
+    scrollwheel: false,
     zoom: 10 
     };
     $scope.markers = Markers;
