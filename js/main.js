@@ -44,8 +44,6 @@ app.config(['$routeProvider', function ($routeProvider) {
 
 
 app.controller('PageCtrl', function ($scope, $location, $http, $interval) {
-
-
     
     $('.filter li').on('click', function () {
         $('li').removeClass('active');
@@ -488,71 +486,82 @@ app.controller('ExampleController', ['$scope', function($scope) {
 }]);
 
 
-
 /*Controller Portfolio and filter Images*/
-app.controller("dataImagesWork", function ($scope) {
+app.controller("dataImagesWork", function($scope, $uibModal) {
+
+	$scope.viewProduct = function(product) {
+		$uibModal.open({
+			scope: $scope,
+			templateUrl: 'modalimages',
+			resolve: {product: product},
+			controller: function(product, $scope) {
+				$scope.product = product;
+			}
+		});
+	};
     $scope.images_work = [
           {
               "name": 'PA Liquor Control Board',
-              "src": "Liquor-Control-Board340.png",
+              "src": "../img/lightbox-images/Liquor-Control-Board.png",
               "link": "http://www.finewineandgoodspirits.com/webapp/wcs/stores/servlet/StoreCatalogDisplay?storeId=10051&catalogId=10051&langId=-1"
           },
           {
               "name": 'PA Provider Self Service',
-              "src": "Provider-Services-of-PA340.png",
+              "src": "../img/lightbox-images/Provider-Services-of-PA.png",
               "link": 'https://www.pelican.state.pa.us/provider/default.aspx?TYPE=33554433&REALMOID=06-ccc2a1cb-0683-440f-bfa6-cad042af12ba&GUID=&SMAUTHREASON=0&METHOD=GET&SMAGENTNAME=-SM-ZW9pIAMntaN%2bR%2fAG5q4UUzXVDz%2bKoMG2pXXJCs1re8tkRKCZKtgqJypoW9Af5ilo&TARGET=-SM-https%3a%2f%2fwww%2epelican%2estate%2epa%2eus%2fprovider%2fui%2fhome%2easpx#'
           },
           {
               "name": 'Job Gateway',
-              "src": "JobGateway340.png",
+              "src": "../img/lightbox-images/JobGateway.png",
               "link": 'https://www.jobgateway.pa.gov/jponline/Admin/Common/Portal.aspx?w@cIRFbHc_kyIfEUDPqYpUspb3u_@dnsvVOXen8isTEcdYg4grazpGUr2rtw4QN@odjSSGi8RwBm4_nraX__ITaRZJT8HYWbn3TgGPFcA0A-6xUQEkG_y@pHEMFmjDEEwSppJHEDfIGrVG6yQ4mCf4aazFA4QpEE'
           },
           {
               "name": 'Keystone Canine Rescue',
-              "src": "KeystoneCanineRescue340.png",
+              "src": "../img/lightbox-images/KeystoneCanineRescue.png",
               "link": 'http://www.keystonecaninerescue.org/'
           },
           {
               "name": 'Thrifty Elegance',
-              "src": "ThriftyElegance340.png",
+              "src": "../img/lightbox-images/ThriftyElegance.png",
               "link": 'http://www.thriftyelegancepa.com/'
           },
           {
               "name": 'Team Balance Harrisburg',
-              "src": "Team-Balance-Harrisburg340.png",
+              "src": "../img/lightbox-images/Team-Balance-Harrisburg.png",
               "link": 'http://www.teambalanceharrisburg.com/'
           },
           {
               "name": 'Witmers Feed & Grain',
-              "src": "Witmers340.png",
+              "src": "../img/lightbox-images/Witmers.png",
               "link": 'http://www.witmersfeed.com/'
           },
           {
               "name": 'R & J Dairy Consulting',
-              "src": "randjdairy340.png",
+              "src": "../img/lightbox-images/randjdairy.png",
               "link": 'http://www.randjdairy.com/'
           },
           {
               "name": 'Modern Vintage 1005',
-              "src": "MV1005340.png",
+              "src": "../img/lightbox-images/MV1005.png",
               "link": 'http://www.modernvintage1005.com/'
           },
           {
-              "name": 'Feed Commodities',
-              "src": "FeedCommodities340.png",
-              "link": 'http://www.feedcommodities.com/'
+              "name": 'Politica Y Gobiernos',
+              "src": "../img/lightbox-images/politica.png",
+              "link": 'http://www.politicaygobiernos.com/'
           },
           {
-              "name": 'VisionSpec Home',
-              "src": "VisionSpecHome340.png",
-              "link": 'http://www.visionspechome.com/'
+              "name": 'PA Wounded Warriors',
+              "src": "../img/lightbox-images/PAWW.png",
+              "link": '#'
           },
           {
               "name": 'Nick & Sons Contracting',
-              "src": "Nick_Sons340.png",
+              "src": "../img/lightbox-images/NickSons.png",
               "link": 'http://www.nickandsonsllc.com/'
           }];
-
+    
+            
 });
 
 //tabs management

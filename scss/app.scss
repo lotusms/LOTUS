@@ -1226,6 +1226,23 @@ img {
 
 
 /****************  FORMS    ************/
+
+.btn-list {
+    left: calc(50% - 60px);
+    position: absolute;
+    top: calc(50% - 40px);
+    a.btn{
+        @include border-radius(50%);
+        width: 35px;
+        height: 35px;
+        padding: 9px;
+        margin: 0 10px;
+        i{
+            font-size: 17px;
+        }
+    }
+}
+
 .form-group {
 	margin-bottom: 30px;
     label {
@@ -1823,4 +1840,16 @@ footer {
 
 .marbot20{
     margin-bottom:20px;
+}
+
+/* Modals */
+
+.modal-dialog{
+    width:800px;
+    .lightbox-modal{
+        img{
+            width:100%;
+            height:100%;
+        }
+    }
 }
