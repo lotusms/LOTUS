@@ -404,6 +404,7 @@
     <Content Include="phpmailer\test\runfakepopserver.sh" />
     <Content Include="phpmailer\travis.phpunit.xml.dist" />
     <Content Include="revolution\.DS_Store" />
+    <Content Include="revolution\assets\loader.gif" />
     <Content Include="revolution\css\.DS_Store" />
     <Content Include="revolution\css\captions-original.min.css" />
     <Content Include="revolution\css\captions-original.css" />
@@ -437,6 +438,7 @@
     <Content Include="revolution\js\jquery.themepunch.tools.js" />
     <Content Include="scss\app.css" />
     <Content Include="scss\app.css.map" />
+    <Content Include="scss\app.min.css" />
     <Content Include="scss\responsive.css" />
     <Content Include="scss\responsive.css.map" />
     <Content Include="video\.DS_Store" />
