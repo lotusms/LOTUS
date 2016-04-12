@@ -57,7 +57,7 @@ if (
         exit;
     }
 
-    header('Location: http://testangular.lotusmarketingsolutions.com/#/contact');
+    header('Location: http://testangular.lotusmarketingsolutions.com/contact');
     echo json_encode($data);
 
 } else {
