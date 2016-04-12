@@ -1,6 +1,8 @@
 var app = angular.module('angula', ['ngRoute', 'ui.bootstrap', 'ngAnimate', 'ngMaterial', 'uiGmapgoogle-maps']);
+  
+app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
 
-app.config(['$routeProvider', function ($routeProvider) {
+      
   $routeProvider
     // Home
     .when("/", { templateUrl: "views/home.html", controller: "PageCtrl" })
@@ -39,7 +41,12 @@ app.config(['$routeProvider', function ($routeProvider) {
     //.otherwise("/404", { templateUrl: "views/404.html", controller: "PageCtrl" });
     .otherwise({ redirectTo: '/' });
     
-    
+    if(window.history && window.history.pushState){
+    	$locationProvider.html5Mode({
+                 enabled: true,
+                 requireBase: false
+          });
+    }
 }]);
 
 
