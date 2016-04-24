@@ -41,13 +41,18 @@ app.config(['$routeProvider', '$locationProvider', function ($routeProvider, $lo
     //.otherwise("/404", { templateUrl: "views/404.html", controller: "PageCtrl" });
     .otherwise({ redirectTo: '/' });
     
-    if(window.history && window.history.pushState){
+   
+   if(window.history && window.history.pushState){
     	$locationProvider.html5Mode({
                  enabled: true,
                  requireBase: false
           });
     }
 }]);
+
+
+
+
 
 
 app.controller('PageCtrl', function ($scope, $location, $http, $interval) {
