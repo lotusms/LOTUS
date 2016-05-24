@@ -1,0 +1,55 @@
+
+/***** BASE COLORS *****/
+
+$black-base:        #000;                           //#000
+$white-base:        #FFF;                           //#FFF
+$red:               #ff0000;                        //#ff0000
+$green:             #12956D;                        //#168324
+$blue:              #0786B2;                        //#00759B
+$dark-blue:         #044F69;
+$yellow:            #ffd800;                        //#ffd800 
+
+
+/***** CUSTOM COLORS *****/
+
+$black:             lighten($black-base, 20%);       //#333
+$gray:              lighten($black-base, 44%);       //#707070
+$gray-light:        lighten($black-base, 60%);       //#999
+$gray-lighter:      lighten($black-base, 80%);       //#CCC
+$gray-lightest:     lighten($black-base, 87%);       //#dedede
+$almost-white:      lighten($black-base, 93.25%);    //#eee
+
+$gray-bg:           #D7D7D7;
+$footer-bg:         #034E69;
+
+$primary-color:     $dark-blue;                      //#00759B
+$secondary-color:   $gray-lightest;                  //#000
+$ternary-color:     lighten($black-base, 50%);       //#000
+
+
+/***** HOVER COLORS *****/
+
+$primary-hover:     darken($primary-color, 10%);     //#004f68
+$secondary-hover:   lighten($black-base, 50%);       //#000
+$ternary-hover:     lighten($black-base, 50%);       //#000
+
+
+/***** FONTS *****/
+
+$base-font-size:    13px;         
+$h1-size:        ($base-font-size + 13px);
+$h2-size:        ($base-font-size + 13px);
+$h3-size:        ($base-font-size + 9px);
+$h4-size:        ($base-font-size + 1px);
+$h5-size:        ($base-font-size - 1px);  
+$h6-size:        ($base-font-size - 3px);
+
+
+/***** HEIGHTS *****/
+
+$header-height:     85px;
+$why-us-height:     800px;
+
+
+
+

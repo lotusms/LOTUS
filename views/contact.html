@@ -1,0 +1,90 @@
+<div class="map-overlay" onClick="style.pointerEvents='none'"></div>
+<div class="ang-map" ng-app="myApp" ng-controller="gMap">
+    <ui-gmap-google-map center='map.center'
+                        zoom='map.zoom'
+                        draggable="false"
+                        options="options"
+                        aria-label="Google map">
+
+        <ui-gmap-marker ng-repeat="marker in markers"
+                        coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+            <ui-gmap-window>
+                <div>{{marker.window.title}}</div>
+            </ui-gmap-window>
+        </ui-gmap-marker>
+
+    </ui-gmap-google-map>
+</div>
+
+<div class="container">
+    <div class="row last-inf-dt">
+        <div class="col-xs-12 col-sm-12 col-md-8" ng-controller="form">
+            <h1 class="contact-title">Let's Get In Touch!</h1>
+
+            <p class="contact-sub-txt">Use the form below for any questions or inquiries you may have. If you are interested in an estimate or quote, use our <a href="/quote-request">Quote Request</a> page.</p>
+
+            <form id="contact-form" name="ContactForm" role="form" method="POST" action="contact-form.php" ng-submit="submitForm(ContactForm.$valid)" novalidate>
+                <div class="row">
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6" ng-class="{ 'has-error' : ContactForm.contact_name.$invalid && !ContactForm.contact_name.$pristine }">
+                        <label for="contact_name">Name *</label>
+                        <input type="text" name="contact_name" placeholder="e.g. Jhon Smith" class="form-control" id="contact_name" ng-model="name" ng-required="true">
+                        <p ng-show="ContactForm.contact_name.$invalid && !ContactForm.contact_name.$pristine" class="help-block">You name is required.</p>
+                    </div>
+                    
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6">
+                        <label for="contact_company">Company Name</label>
+                        <input type="text" name="contact_company" placeholder="e.g. Angu Studio" class="form-control" id="contact_company">
+                    </div>
+                    <div class="clearfix"></div>
+                    
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6" ng-class="{ 'has-error' : ContactForm.contact_email.$invalid && !ContactForm.contact_email.$pristine }">
+                        <label for="contact_email">Email Address *</label>
+                        <input type="email" name="contact_email" placeholder="e.g. mail@example.com" class="form-control" id="contact_email" ng-model="email" ng-required="true">
+                        <p ng-show="ContactForm.contact_email.$invalid && !ContactForm.contact_email.$pristine" class="help-block">Enter a valid email.</p>
+                    </div>
+                    
+                    <div class="form-group col-xs-12 col-sm-12 col-md-6" ng-class="{ 'has-error' : ContactForm.contact_phone.$invalid && !ContactForm.contact_phone.$pristine }">
+                        <label for="contact_phone">Phone Number</label>
+                        <input type="phone" name="contact_phone" placeholder="e.g. 717-123-2345" class="form-control" id="contact_phone" ng-minlength="10" ng-maxlength="10" ng-model="phone" ng-required="true" ng-pattern="/^(\+?(\d{1}|\d{2}|\d{3})[- ]?)?\d{3}[- ]?\d{3}[- ]?\d{4}$/">
+                        <p ng-show="ContactForm.contact_phone.$error.pattern" class="help-block">Phone number is invalid.</p>
+                    </div>
+                    
+                    <div class="clearfix"></div>
+                    
+                    <div class="form-group col-xs-12" ng-class="{ 'has-error' : ContactForm.contact_message.$invalid && !ContactForm.contact_message.$pristine }">
+                        <label for="contact_message">Message</label>
+                        <textarea name="contact_message" class="form-control" rows="12" id="contact_message" ng-model="text" ng-minlength="20" ng-required="true"></textarea>
+                        <p ng-show="ContactForm.contact_message.$error.minlength" class="help-block">Your message must be longer than 20 characters.</p>
+                    </div>
+                    
+                    <div class="form-group col-lg-12">
+                        <input type="hidden" name="save" value="contact">
+                        <button type="submit" class="btn btn-primary bt-contact-submit" ng-disabled="ContactForm.$invalid">Send</button>
+                        <p class="alert alert-success success">Your message has been sent successfully.</p>
+
+                        <p class="alert alert-danger error">E-mail must be valid or message must be longer than 20 characters.</p>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-xs-12 col-sm-12 col-md-4 contact-details">
+            <h2 class="contact-title">Contact Information</h2>
+
+            <p><i class="fa fa-phone"></i> (717) 945-8132</p>
+
+            <p><i class="fa fa-envelope-o"></i> <a href="mailto:feedback@angula.com">lotusms@outlook.com</a></p>
+
+
+            <p><i class="fa fa-clock-o"></i> Monday - Friday: 9:00 AM to 5:00 PM</p>
+
+            <p class="social">
+                <span><a href="https://www.facebook.com/LOTUSMarketingSolutionsLLC/"><i class="fa fa-facebook"></i></a></span>
+                <span><a href="https://twitter.com/LotusMarketingS"><i class="fa fa-twitter"></i></a></span>
+                <span><a href="https://plus.google.com/116733669775024415866/posts"><i class="fa fa-google-plus"></i></a></span>
+                <span><a href="https://www.linkedin.com/pub/lotus-marketing-solutions-llc/62/854/321"><i class="fa fa-linkedin"></i></a></span>
+            </p>
+
+        </div>
+    </div>
+</div>
